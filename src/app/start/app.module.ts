@@ -4,6 +4,7 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from '../_common/app-routing.module';
 import {AppComponent} from './component/app.component';
 import {TranslatorModule} from 'angular-translator';
+import {MatTabsModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import {TranslatorModule} from 'angular-translator';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatTabsModule,
     TranslatorModule.forRoot({
       providedLanguages: ['zh'],
       defaultLanguage: 'zh',
