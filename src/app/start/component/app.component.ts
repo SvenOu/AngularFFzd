@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Translator} from 'angular-translator';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import {Translator} from 'angular-translator';
   styleUrls: ['./app.component.styl']
 })
 export class AppComponent {
-  title = 'ffzd';
+  title = '';
   constructor(private translator: Translator) {
     const promises = [];
 
