@@ -113,8 +113,5 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {
-   const loadingEl = document.getElementById('initLoading');
-   loadingEl.parentNode.removeChild(loadingEl);
-  }
+  constructor() {}
 }

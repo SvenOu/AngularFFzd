@@ -1,11 +1,38 @@
-<mat-tab-group headerPosition="below" mat-align-tabs="center" dynamicHeight="true">
-  <mat-tab label="First">
+<mat-tab-group class="mat-tab-group" headerPosition="below" mat-align-tabs="center">
+  <mat-tab>
     <ng-template mat-tab-label>
-      <mat-icon>thumb_down</mat-icon>
-      First
+      <div class="vbox">
+        <img class="mat-tab-icon" src="assets/style/icon/ff_icon.png" alt="some_text">
+        <span class="mat-tab-label-text">{{ 'ffChild' | translate }}</span>
+      </div>
     </ng-template>
     Content 1
   </mat-tab>
-  <mat-tab label="Second"> Content 2</mat-tab>
-  <mat-tab label="Third"> Content 3</mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div class="vbox">
+        <img class="mat-tab-icon" src="assets/style/icon/adult_icon.png" alt="some_text">
+        <span class="mat-tab-label-text">{{ 'ffAdult' | translate }}</span>
+      </div>
+    </ng-template>
+    Content 2
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div class="vbox">
+        <img class="mat-tab-icon" src="assets/style/icon/vip_icon.png" alt="some_text">
+        <span class="mat-tab-label-text">{{ 'vipOrder' | translate }}</span>
+      </div>
+    </ng-template>
+    Content 3
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div class="vbox">
+        <img class="mat-tab-icon" src="assets/style/icon/profile_icon.png" alt="some_text">
+        <span class="mat-tab-label-text">{{ 'personCenter' | translate }}</span>
+      </div>
+    </ng-template>
+    Content 4
+  </mat-tab>
 </mat-tab-group>
