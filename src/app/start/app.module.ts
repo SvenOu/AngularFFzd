@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {ElementRef, NgModule} from '@angular/core';
 
 import {AppRoutingModule} from '../_common/app-routing.module';
 import {AppComponent} from './component/app.component';
@@ -113,4 +113,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  constructor() {
+   const loadingEl = document.getElementById('initLoading');
+   loadingEl.parentNode.removeChild(loadingEl);
+  }
 }
