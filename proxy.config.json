@@ -1,0 +1,12 @@
+{
+  "/API_ROP": {
+    "target": "http://app.yuedaotech.cn:25603/API_ROP",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/API_UBP": {
+    "target": "http://app.yuedaotech.cn:25603/API_ROP",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
