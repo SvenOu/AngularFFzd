@@ -1,4 +1,4 @@
-<mat-tab-group class="mat-tab-group" headerPosition="below" mat-align-tabs="center">
+<mat-tab-group  [ngClass]="'main-tab-content'"  headerPosition="below" mat-align-tabs="center">
   <mat-tab>
     <ng-template mat-tab-label>
       <div class="vbox">
@@ -6,7 +6,15 @@
         <span class="mat-tab-label-text">{{ 'ffChild' | translate }}</span>
       </div>
     </ng-template>
-    Content 1
+    <mat-tab-group>
+<!--      <mat-tab label="{{ 'animeParadise' | translate }}">  </mat-tab>
+      <mat-tab label="{{ 'choiceness' | translate }}">  </mat-tab>
+      <mat-tab label="{{ 'culturalClassics' | translate }}">  </mat-tab>
+      <mat-tab label="{{ 'englishParadise' | translate }}">  </mat-tab>
+      <mat-tab label="{{ 'logicOfScience' | translate }}">  </mat-tab>
+      <mat-tab label="{{ 'musicCastle' | translate }}">  </mat-tab>
+      <mat-tab label="{{ 'animeStory' | translate }}">  </mat-tab>-->
+    </mat-tab-group>
   </mat-tab>
   <mat-tab>
     <ng-template mat-tab-label>
