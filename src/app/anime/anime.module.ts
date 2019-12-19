@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FfAdultComponent } from './ff-adult/ff-adult.component';
-
-
+import { GdenComponent } from './component/gden/gden.component';
 
 @NgModule({
-  declarations: [FfAdultComponent],
+  declarations: [GdenComponent],
   imports: [
     CommonModule
   ]
 })
-export class AdultModule { }
+export class AnimeModule { }

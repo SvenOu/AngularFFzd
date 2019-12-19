@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FfAdultComponent } from './ff-adult.component';
+import { GdenComponent } from './gden.component';
 
-describe('FfAdultComponent', () => {
-  let component: FfAdultComponent;
-  let fixture: ComponentFixture<FfAdultComponent>;
+describe('GdenComponent', () => {
+  let component: GdenComponent;
+  let fixture: ComponentFixture<GdenComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FfAdultComponent ]
+      declarations: [ GdenComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FfAdultComponent);
+    fixture = TestBed.createComponent(GdenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
