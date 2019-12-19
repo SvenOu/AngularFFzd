@@ -1,21 +1,25 @@
 import {NgModule} from '@angular/core';
-
-import {AppRoutingModule} from '../_common/app-routing.module';
 import {AppComponent} from './component/app.component';
 import {TranslatorModule} from 'angular-translator';
 import {BrowserModule} from '@angular/platform-browser';
-
-
+import {FormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
+import {NgZorroAntdMobileModule} from 'ng-zorro-antd-mobile';
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    AppRoutingModule,
     BrowserModule,
-    // material start
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
 
-    // material end
+    /** 导入 ng-zorro-antd-mobile 模块 **/
+    NgZorroAntdMobileModule,
+
+    /** 导入 国际化 模块 **/
     TranslatorModule.forRoot({
       providedLanguages: ['zh'],
       defaultLanguage: 'zh',

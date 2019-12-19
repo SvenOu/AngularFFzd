@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/ng-zorro-antd-mobile/src/ng-zorro-antd-mobile.min.css",
               "src/styles.styl"
             ],
             "scripts": []

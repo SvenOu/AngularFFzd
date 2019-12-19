@@ -15,4 +15,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
   ngOnInit(): void {
   }
+
+  onLeftClick() {
+    console.log('onLeftClick');
+  }
 }
