@@ -1,72 +1,8 @@
-<div class="flex-container">
-  <Flex [direction]="'column'" [align]="'stretch'">
-    <div class="flex-container">
-      <Flex [direction]="'row'" [align]="'center'">
-        <div class="inline">
-          <div Button [icon]="headBackImg">
-            {{ 'back' | translate }}
-          </div>
-          <ng-template #headBackImg>
-            <img src="assets/style/icon/back.png" alt=""/>
-          </ng-template>
-        </div>
+<h1>测试标题</h1>
+<nav>
+  <a [routerLink]="['/product/', 'ffChild','4']">
+    链接测试
+  </a>
+</nav>
+<router-outlet></router-outlet>
 
-        <a [routerLink]="['/product/', 'ffChild','4']">
-          链接测试
-        </a>
-
-        <div class="inline header-search-container">
-          <SearchBar [placeholder]="trans.searchPlaceholder"></SearchBar>
-        </div>
-        <div class="inline">
-          <img src="assets/style/icon/profile_icon.png" alt=""/>
-        </div>
-      </Flex>
-    </div>
-
-    <div class="app-content">
-      <SegmentedControl [selectedIndex]="activeRootIndex"
-                        (onChange)="onSelectLevelOneTab($event)"
-                        [values]="[tabRootConfig['tabName1'],tabRootConfig['tabName2'],tabRootConfig['tabName3']]">
-      </SegmentedControl>
-
-      <div [ngSwitch]="activeRootIndex">
-        <div *ngSwitchCase="0">
-          <Tabs
-            [page]="3"
-            [activeTab]="activeIndex"
-            [prerenderingSiblingsNumber]="0"
-            (onChange)="onSelectLevelTwoTab($event)">
-
-            <TabPane
-              *ngFor="let tItem of tabRootConfig['tabVoChild1']; let i = index" [title]="tItem['tabName']">
-              <div
-                style="display: flex; align-items: center;justify-content: center;height: 150px;background-color: #fff">
-                {{ tItem['tabName'] }}
-              </div>
-            </TabPane>
-          </Tabs>
-        </div>
-
-        <div *ngSwitchCase="1">
-          <Tabs
-            [page]="3"
-            [activeTab]="activeIndex"
-            [prerenderingSiblingsNumber]="0"
-            (onChange)="onSelectLevelTwoTab($event)">
-
-            <TabPane
-              *ngFor="let tItem of tabRootConfig['tabVoChild2']; let i = index" [title]="tItem['tabName']">
-              <div
-                style="display: flex; align-items: center;justify-content: center;height: 150px;background-color: #fff">
-                {{ tItem['tabName'] }}
-              </div>
-            </TabPane>
-          </Tabs>
-        </div>
-
-        <div *ngSwitchDefault></div>
-      </div>
-    </div>
-  </Flex>
-</div>

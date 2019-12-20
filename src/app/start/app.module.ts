@@ -9,7 +9,7 @@ import {NgZorroAntdMobileModule} from 'ng-zorro-antd-mobile';
 import {AppRoutingModule} from '../_common/app-routing.module';
 import {ProfileModule} from '../profile/profile.module';
 import {OrderModule} from '../order/order.module';
-import {AnimeModule} from '../anime/anime.module';
+import {MainModule} from '../main/main.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -31,11 +31,10 @@ import {AnimeModule} from '../anime/anime.module';
     }),
 
     /** app 内模块 **/
-    AnimeModule,
+    AppRoutingModule,
+    MainModule,
     OrderModule,
-    ProfileModule,
-    AppRoutingModule
-
+    ProfileModule
   ],
   providers: [],
   bootstrap: [AppComponent]

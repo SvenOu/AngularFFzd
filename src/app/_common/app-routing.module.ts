@@ -1,14 +1,17 @@
-import { NgModule } from '@angular/core';
-import {Routes, RouterModule, Router} from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {AppComponent} from '../start/component/app.component';
-import {MyCenterComponent} from '../profile/component/my-center/my-center.component';
+import {MainComponent} from '../main/component/main/main.component';
+
 const routes: Routes = [
   { path: '', component: AppComponent },
-  { path: 'product/ffChild/:tabId', component: MyCenterComponent }
+  { path: 'product/ffChild/:tabId', component: MainComponent }
 ];
 // export const router:RouterModule = RouterModule.forRoot(routes);
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
   exports: [RouterModule]
 })
 
