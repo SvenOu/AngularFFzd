@@ -20,20 +20,46 @@
     </div>
 
     <div class="app-content">
+      <SegmentedControl [selectedIndex]="activeRootIndex"
+                        (onChange) = "onSelectLevelOneTab($event)"
+                        [values]="[tabRootConfig['tabName1'],tabRootConfig['tabName2'],tabRootConfig['tabName3']]">
+      </SegmentedControl>
 
-      <Tabs
-        [page]="3"
-        [activeTab]="activeIndex"
-        [prerenderingSiblingsNumber]="0"
-        (onChange)="onSelectLevelOneTab($event)">
+      <div [ngSwitch]="activeRootIndex">
+        <div *ngSwitchCase="0">
+          <Tabs
+            [page]="3"
+            [activeTab]="activeIndex"
+            [prerenderingSiblingsNumber]="0"
+            (onChange)="onSelectLevelTwoTab($event)">
 
-        <TabPane *ngFor="let tItem of tabRootConfig['tabVoChild1']; let i = index" [title]="tItem['tabName']">
-          <div style="display: flex; align-items: center;justify-content: center;height: 150px;background-color: #fff">
-            {{ tItem['tabName'] }}
-          </div>
-        </TabPane>
+            <TabPane
+              *ngFor="let tItem of tabRootConfig['tabVoChild1']; let i = index" [title]="tItem['tabName']">
+              <div style="display: flex; align-items: center;justify-content: center;height: 150px;background-color: #fff">
+                {{ tItem['tabName'] }}
+              </div>
+            </TabPane>
+          </Tabs>
+        </div>
 
-      </Tabs>
+        <div *ngSwitchCase="1">
+          <Tabs
+            [page]="3"
+            [activeTab]="activeIndex"
+            [prerenderingSiblingsNumber]="0"
+            (onChange)="onSelectLevelTwoTab($event)">
+
+            <TabPane
+              *ngFor="let tItem of tabRootConfig['tabVoChild2']; let i = index" [title]="tItem['tabName']">
+              <div style="display: flex; align-items: center;justify-content: center;height: 150px;background-color: #fff">
+                {{ tItem['tabName'] }}
+              </div>
+            </TabPane>
+          </Tabs>
+        </div>
+
+        <div *ngSwitchDefault></div>
+      </div>
     </div>
   </Flex>
 </div>

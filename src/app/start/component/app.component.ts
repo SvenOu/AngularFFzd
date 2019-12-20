@@ -12,6 +12,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   private tabRootConfig:object = {};
   private trans: object = {};
   private tabConfigs: TabVo[];
+  private activeRootIndex: number = 1;
   private activeIndex: number = 0;
   constructor(private translator: Translator) {}
 
@@ -82,12 +83,16 @@ export class AppComponent implements OnInit, AfterViewInit {
         this.tabConfigs.push(tabVo2);
 
         this.tabRootConfig['tabName3'] = this.trans['VIPOrder'];
-        console.log(this.tabRootConfig)
       }
     });
   }
 
-  onSelectLevelOneTab($event: TabsOnChangeEvent) {
-    console.log(this.tabConfigs);
+  onSelectLevelOneTab(event) {
+    this.activeRootIndex = event.selectedIndex;
+    console.log(event);
+  }
+
+  onSelectLevelTwoTab($event: TabsOnChangeEvent) {
+
   }
 }
