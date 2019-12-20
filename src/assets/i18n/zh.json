@@ -1,6 +1,23 @@
 {
+  "back": "返回",
+  "searchPlaceholder": "请输入搜索内容",
+  "ffChild": "蜂蜂少儿",
   "animeParadise": "动漫乐园",
-  "vipOrder": "vip优享",
-  "personCenter": "个人中心",
-  "back": "返回"
+  "ffSelection": "峰峰精选",
+  "tabGraden": "兔小贝乐园",
+  "culturalClassics": "人文国学",
+  "englishParadise": "英语乐园",
+  "logicScience": "科学逻辑",
+  "musicCastle": "音乐城堡",
+  "animeStory": "动漫故事",
+  "hildRearing": "亲子育儿",
+  "recommend": "推荐",
+  "parenting": "亲子教育",
+  "thymopsyche": "情感心理",
+  "socialCommunication": "社交沟通",
+  "healthBeauty": "健康美丽",
+  "workMakeMoney": "赚钱职场",
+  "lifeGrowingUp": "生活成长",
+  "VIPOrder": "VIP订购",
+  "personalCenter ": "个人中心"
 }
