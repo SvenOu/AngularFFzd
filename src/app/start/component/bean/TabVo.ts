@@ -1,20 +1,20 @@
 export class TabVo {
   private _tabName: string;
-  private _pageId: string;
+  private _tabId: string;
   private _child: TabVo[];
 
-  constructor(tabName: string, pageId: string, child: TabVo[]) {
+  constructor(tabName: string, tabId: string, child: TabVo[]) {
     this._tabName = tabName;
-    this._pageId = pageId;
+    this._tabId = tabId;
     this._child = child;
   }
 
-  get pageId(): string {
-    return this._pageId;
+  get tabId(): string {
+    return this._tabId;
   }
 
-  set pageId(value: string) {
-    this._pageId = value;
+  set tabId(value: string) {
+    this._tabId = value;
   }
 
   get tabName(): string {

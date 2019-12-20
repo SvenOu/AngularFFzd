@@ -6,6 +6,10 @@ import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {NgZorroAntdMobileModule} from 'ng-zorro-antd-mobile';
+import {AppRoutingModule} from '../_common/app-routing.module';
+import {ProfileModule} from '../profile/profile.module';
+import {OrderModule} from '../order/order.module';
+import {AnimeModule} from '../anime/anime.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -15,7 +19,6 @@ import {NgZorroAntdMobileModule} from 'ng-zorro-antd-mobile';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-
     /** 导入 ng-zorro-antd-mobile 模块 **/
     NgZorroAntdMobileModule,
 
@@ -25,7 +28,14 @@ import {NgZorroAntdMobileModule} from 'ng-zorro-antd-mobile';
       defaultLanguage: 'zh',
       // 默认根据运行环境,自动选择语言
       detectLanguage: true
-    })
+    }),
+
+    /** app 内模块 **/
+    AnimeModule,
+    OrderModule,
+    ProfileModule,
+    AppRoutingModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

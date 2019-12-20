@@ -2,6 +2,7 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {Translator} from 'angular-translator';
 import {TabsOnChangeEvent} from 'ng-zorro-antd-mobile/tabs/PropsType';
 import {TabVo} from './bean/TabVo';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   private tabConfigs: TabVo[];
   private activeRootIndex: number = 1;
   private activeIndex: number = 0;
-  constructor(private translator: Translator) {}
+  constructor(private translator: Translator, private router: ActivatedRoute) {}
 
   ngAfterViewInit(): void {
     // 去掉加载信息
@@ -23,6 +24,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+
     const keys:string[] =[
       'searchPlaceholder',
       'ffChild',
@@ -51,26 +53,26 @@ export class AppComponent implements OnInit, AfterViewInit {
           this.trans[keys[i]] = translations[i];
         });
         const childs1: TabVo[] = [
-          new TabVo(this.trans['ffSelection'], '', null),
-          new TabVo(this.trans['tabGraden'], '', null),
-          new TabVo(this.trans['culturalClassics'], '', null),
-          new TabVo(this.trans['englishParadise'], '', null),
-          new TabVo(this.trans['logicScience'], '', null),
-          new TabVo(this.trans['musicCastle'], '', null),
-          new TabVo(this.trans['animeStory'], '', null)
+          new TabVo(this.trans['ffSelection'], '1', null),
+          new TabVo(this.trans['tabGraden'], '2', null),
+          new TabVo(this.trans['culturalClassics'], '3', null),
+          new TabVo(this.trans['englishParadise'], '4', null),
+          new TabVo(this.trans['logicScience'], '5', null),
+          new TabVo(this.trans['musicCastle'], '6', null),
+          new TabVo(this.trans['animeStory'], '7', null)
         ] ;
-        const tabVo1 = new TabVo(this.trans['ffChild'], '', childs1);
+        const tabVo1 = new TabVo(this.trans['ffChild'], 'ffChild', childs1);
 
         const childs2: TabVo[] = [
-          new TabVo(this.trans['recommend'], '', null),
-          new TabVo(this.trans['parenting'], '', null),
-          new TabVo(this.trans['thymopsyche'], '', null),
-          new TabVo(this.trans['socialCommunication'], '', null),
-          new TabVo(this.trans['healthBeauty'], '', null),
-          new TabVo(this.trans['workMakeMoney'], '', null),
-          new TabVo(this.trans['lifeGrowingUp'], '', null)
+          new TabVo(this.trans['recommend'], '1', null),
+          new TabVo(this.trans['parenting'], '2', null),
+          new TabVo(this.trans['thymopsyche'], '3', null),
+          new TabVo(this.trans['socialCommunication'], '4', null),
+          new TabVo(this.trans['healthBeauty'], '5', null),
+          new TabVo(this.trans['workMakeMoney'], '6', null),
+          new TabVo(this.trans['lifeGrowingUp'], '7', null)
         ] ;
-        const tabVo2 = new TabVo(this.trans['childRearing'], '', childs2);
+        const tabVo2 = new TabVo(this.trans['childRearing'], 'childRearing', childs2);
 
         this.tabConfigs = [];
 

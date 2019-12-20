@@ -10,6 +10,11 @@
             <img src="assets/style/icon/back.png" alt=""/>
           </ng-template>
         </div>
+
+        <a [routerLink]="['/product/', 'ffChild','4']">
+          链接测试
+        </a>
+
         <div class="inline header-search-container">
           <SearchBar [placeholder]="trans.searchPlaceholder"></SearchBar>
         </div>
