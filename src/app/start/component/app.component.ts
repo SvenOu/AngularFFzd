@@ -76,13 +76,14 @@ export class AppComponent implements OnInit, AfterViewInit {
 
         this.tabRootConfig['tabVoChild1'] = tabVo1.child;
         this.tabRootConfig['tabName1'] = tabVo1.tabName;
-        this.tabConfigs.push(tabVo1);
 
         this.tabRootConfig['tabVoChild2'] = tabVo2.child;
         this.tabRootConfig['tabName2'] = tabVo2.tabName;
-        this.tabConfigs.push(tabVo2);
 
         this.tabRootConfig['tabName3'] = this.trans['VIPOrder'];
+
+        this.tabConfigs.push(tabVo1);
+        this.tabConfigs.push(tabVo2);
       }
     });
   }
