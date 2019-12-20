@@ -21,7 +21,7 @@
 
     <div class="app-content">
       <SegmentedControl [selectedIndex]="activeRootIndex"
-                        (onChange) = "onSelectLevelOneTab($event)"
+                        (onChange)="onSelectLevelOneTab($event)"
                         [values]="[tabRootConfig['tabName1'],tabRootConfig['tabName2'],tabRootConfig['tabName3']]">
       </SegmentedControl>
 
@@ -35,7 +35,8 @@
 
             <TabPane
               *ngFor="let tItem of tabRootConfig['tabVoChild1']; let i = index" [title]="tItem['tabName']">
-              <div style="display: flex; align-items: center;justify-content: center;height: 150px;background-color: #fff">
+              <div
+                style="display: flex; align-items: center;justify-content: center;height: 150px;background-color: #fff">
                 {{ tItem['tabName'] }}
               </div>
             </TabPane>
@@ -51,7 +52,8 @@
 
             <TabPane
               *ngFor="let tItem of tabRootConfig['tabVoChild2']; let i = index" [title]="tItem['tabName']">
-              <div style="display: flex; align-items: center;justify-content: center;height: 150px;background-color: #fff">
+              <div
+                style="display: flex; align-items: center;justify-content: center;height: 150px;background-color: #fff">
                 {{ tItem['tabName'] }}
               </div>
             </TabPane>
