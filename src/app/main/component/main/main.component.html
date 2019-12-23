@@ -26,8 +26,8 @@
                         [values]="[tabRootConfig['tabName1'],tabRootConfig['tabName2'],tabRootConfig['tabName3']]">
       </SegmentedControl>
 
-      <div [ngSwitch]="activeRootIndex">
-        <div *ngSwitchCase="0">
+      <div>
+        <div [hidden]="activeRootIndex != 0">
           <Tabs
             [page]="3"
             [activeTab]="activeIndex"
@@ -44,7 +44,7 @@
           </Tabs>
         </div>
 
-        <div *ngSwitchCase="1">
+        <div [hidden]="activeRootIndex != 1">
           <Tabs
             [page]="3"
             [activeTab]="activeIndex"
@@ -61,7 +61,6 @@
           </Tabs>
         </div>
 
-        <div *ngSwitchDefault></div>
       </div>
     </div>
   </Flex>

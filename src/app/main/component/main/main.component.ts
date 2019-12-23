@@ -10,19 +10,13 @@ import {TabVo} from '../../../_common/bean/TabVo';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.styl']
 })
-export class MainComponent implements OnInit, AfterViewInit {
+export class MainComponent implements OnInit{
   private tabRootConfig:object = {};
   private trans: object = {};
   private tabConfigs: TabVo[];
   private activeRootIndex: number = 1;
   private activeIndex: number = 0;
   constructor(private translator: Translator, private router: ActivatedRoute) {}
-
-  ngAfterViewInit(): void {
-    // 去掉加载信息
-    const loadingEl = document.getElementById('initLoading');
-    loadingEl.parentNode.removeChild(loadingEl);
-  }
 
   ngOnInit(): void {
 

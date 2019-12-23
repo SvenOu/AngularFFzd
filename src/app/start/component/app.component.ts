@@ -11,7 +11,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     // 去掉加载信息
     const loadingEl = document.getElementById('initLoading');
-    if(loadingEl){
+    if(loadingEl && loadingEl.parentNode){
       loadingEl.parentNode.removeChild(loadingEl);
     }
   }

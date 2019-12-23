@@ -4,7 +4,7 @@ import {AppComponent} from '../start/component/app.component';
 import {MainComponent} from '../main/component/main/main.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
+  { path: '', component: MainComponent },
   { path: 'product/ffChild/:tabId', component: MainComponent }
 ];
 // export const router:RouterModule = RouterModule.forRoot(routes);
