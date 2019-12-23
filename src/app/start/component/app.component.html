@@ -1,9 +1,9 @@
 <div class="flex-container">
   <Flex [direction]="'row'" [align]="'center'">
     <div class="inline">
-      <div Button [icon]="headBackImg">
+      <a Button [icon]="headBackImg" routerLink="product/ffChild/3">
         {{ 'back' | translate }}
-      </div>
+      </a>
       <ng-template #headBackImg>
         <img src="assets/style/icon/back.png" alt=""/>
       </ng-template>

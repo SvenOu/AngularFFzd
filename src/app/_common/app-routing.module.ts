@@ -4,12 +4,14 @@ import {MainComponent} from '../main/component/main/main.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
-  { path: 'product/ffChild/:tabId', component: MainComponent }
+  { path: 'product/:typeId/:tabIndex', component: MainComponent }
 ];
-// export const router:RouterModule = RouterModule.forRoot(routes);
+
+export const appRouting = RouterModule.forRoot(routes);
+
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    appRouting
   ],
   exports: [RouterModule]
 })

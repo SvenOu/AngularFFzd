@@ -1,20 +1,20 @@
 export class TabVo {
   private _tabName: string;
-  private _tabId: string;
+  private _tabIndex: number|string;
   private _child: TabVo[];
 
-  constructor(tabName: string, tabId: string, child: TabVo[]) {
+  constructor(tabName: string, tabIndex: number|string, child: TabVo[]) {
     this._tabName = tabName;
-    this._tabId = tabId;
+    this._tabIndex = tabIndex;
     this._child = child;
   }
 
-  get tabId(): string {
-    return this._tabId;
+  get tabIndex(): number|string {
+    return this._tabIndex;
   }
 
-  set tabId(value: string) {
-    this._tabId = value;
+  set tabIndex(value: number|string) {
+    this._tabIndex = value;
   }
 
   get tabName(): string {

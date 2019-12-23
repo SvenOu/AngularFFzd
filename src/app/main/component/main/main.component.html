@@ -1,16 +1,16 @@
 <div class="flex-container">
   <Flex [direction]="'column'" [align]="'stretch'">
     <div class="app-content">
-      <SegmentedControl [selectedIndex]="activeRootIndex"
+      <SegmentedControl [selectedIndex]="actRootIndex"
                         (onChange)="onSelectLevelOneTab($event)"
                         [values]="[tabRootConfig['tabName1'],tabRootConfig['tabName2'],tabRootConfig['tabName3']]">
       </SegmentedControl>
 
       <div>
-        <div [hidden]="activeRootIndex != 0">
+        <div [hidden]="actRootIndex != 0">
           <Tabs
             [page]="3"
-            [activeTab]="activeIndex"
+            [activeTab]="0"
             [prerenderingSiblingsNumber]="0"
             (onChange)="onSelectLevelTwoTab($event)">
 
@@ -24,10 +24,10 @@
           </Tabs>
         </div>
 
-        <div [hidden]="activeRootIndex != 1">
+        <div [hidden]="actRootIndex != 1">
           <Tabs
             [page]="3"
-            [activeTab]="activeIndex"
+            [activeTab]="0"
             [prerenderingSiblingsNumber]="0"
             (onChange)="onSelectLevelTwoTab($event)">
 

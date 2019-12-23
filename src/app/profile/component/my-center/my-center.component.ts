@@ -12,13 +12,13 @@ export class MyCenterComponent implements OnInit {
   constructor(private router: ActivatedRoute) { }
 
   ngOnInit() {
-    this.router.paramMap.subscribe(params => {
-      // this.product = products[+params.get('productId')];
-      console.log(this.router);
-      console.log(params.get('typeId'));
-      console.log(params.get('tabId'));
-
-    });
+    // this.router.params.subscribe(params => {
+    //   // this.product = products[+params.get('productId')];
+    //   console.log(this.router);
+    //   console.log(params.get('typeId'));
+    //   console.log(params.get('tabIndex'));
+    //
+    // });
   }
 
 }

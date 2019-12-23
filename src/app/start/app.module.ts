@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {NgZorroAntdMobileModule} from 'ng-zorro-antd-mobile';
-import {AppRoutingModule} from '../_common/app-routing.module';
+import {appRouting, AppRoutingModule} from '../_common/app-routing.module';
 import {ProfileModule} from '../profile/profile.module';
 import {OrderModule} from '../order/order.module';
 import {MainModule} from '../main/main.module';
@@ -32,6 +32,7 @@ import {MainModule} from '../main/main.module';
 
     /** app 内模块 **/
     AppRoutingModule,
+    appRouting,
     MainModule,
     OrderModule,
     ProfileModule
@@ -40,7 +41,5 @@ import {MainModule} from '../main/main.module';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {
-
-  }
+  constructor() {}
 }

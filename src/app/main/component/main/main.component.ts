@@ -1,8 +1,7 @@
-
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Translator} from 'angular-translator';
 import {TabsOnChangeEvent} from 'ng-zorro-antd-mobile/tabs/PropsType';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {TabVo} from '../../../_common/bean/TabVo';
 
 @Component({
@@ -11,15 +10,47 @@ import {TabVo} from '../../../_common/bean/TabVo';
   styleUrls: ['./main.component.styl']
 })
 export class MainComponent implements OnInit{
+  /**
+   * 第一层tab配置
+   */
+  private types = {
+    type0: 'ffChild',
+    type1: 'childRearing'
+  };
+
+  /**
+   * 第一层tab选中索引
+   */
+  private actRootIndex = 0;
+
+  /**
+   * 第二层tab选中索引
+   */
+  private actTabIndexMap = new Map();
+
   private tabRootConfig:object = {};
   private trans: object = {};
   private tabConfigs: TabVo[];
-  private activeRootIndex: number = 1;
-  private activeIndex: number = 0;
-  constructor(private translator: Translator, private router: ActivatedRoute) {}
+  private curTypeId: string = this.types.type1;
+  constructor(
+    private translator: Translator,
+    private router: Router,
+    private activateRouter: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
 
+    this.activateRouter.params.subscribe(params => {
+      console.log(params);
+      const typeId:string = params['typeId'];
+      const tabIndex:string = params['tabIndex'];
+      if(typeId){
+        this.curTypeId = typeId;
+        if(tabIndex && typeof tabIndex != 'string'){
+          this.actTabIndexMap.set(this.actRootIndex, tabIndex);
+        }
+      }
+    });
     const keys:string[] =[
       'searchPlaceholder',
       'ffChild',
@@ -48,26 +79,26 @@ export class MainComponent implements OnInit{
           this.trans[keys[i]] = translations[i];
         });
         const childs1: TabVo[] = [
-          new TabVo(this.trans['ffSelection'], '1', null),
-          new TabVo(this.trans['tabGraden'], '2', null),
-          new TabVo(this.trans['culturalClassics'], '3', null),
-          new TabVo(this.trans['englishParadise'], '4', null),
-          new TabVo(this.trans['logicScience'], '5', null),
-          new TabVo(this.trans['musicCastle'], '6', null),
-          new TabVo(this.trans['animeStory'], '7', null)
+          new TabVo(this.trans['ffSelection'], 0, null),
+          new TabVo(this.trans['tabGraden'], 1, null),
+          new TabVo(this.trans['culturalClassics'], 2, null),
+          new TabVo(this.trans['englishParadise'], 3, null),
+          new TabVo(this.trans['logicScience'], 4, null),
+          new TabVo(this.trans['musicCastle'], 5, null),
+          new TabVo(this.trans['animeStory'], 6, null)
         ] ;
-        const tabVo1 = new TabVo(this.trans['ffChild'], 'ffChild', childs1);
+        const tabVo1 = new TabVo(this.trans[this.types.type0], 'ffChild', childs1);
 
         const childs2: TabVo[] = [
-          new TabVo(this.trans['recommend'], '1', null),
-          new TabVo(this.trans['parenting'], '2', null),
-          new TabVo(this.trans['thymopsyche'], '3', null),
-          new TabVo(this.trans['socialCommunication'], '4', null),
-          new TabVo(this.trans['healthBeauty'], '5', null),
-          new TabVo(this.trans['workMakeMoney'], '6', null),
-          new TabVo(this.trans['lifeGrowingUp'], '7', null)
+          new TabVo(this.trans['recommend'], 0, null),
+          new TabVo(this.trans['parenting'], 1, null),
+          new TabVo(this.trans['thymopsyche'], 2, null),
+          new TabVo(this.trans['socialCommunication'], 3, null),
+          new TabVo(this.trans['healthBeauty'], 4, null),
+          new TabVo(this.trans['workMakeMoney'], 5, null),
+          new TabVo(this.trans['lifeGrowingUp'], 6, null)
         ] ;
-        const tabVo2 = new TabVo(this.trans['childRearing'], 'childRearing', childs2);
+        const tabVo2 = new TabVo(this.trans[this.types.type1], 'childRearing', childs2);
 
         this.tabConfigs = [];
 
@@ -86,12 +117,21 @@ export class MainComponent implements OnInit{
   }
 
   onSelectLevelOneTab(event) {
-    this.activeRootIndex = event.selectedIndex;
+    if(event && event.selectedIndex >=0){
+      this.actRootIndex = event.selectedIndex;
+    }
     console.log(event);
   }
 
-  onSelectLevelTwoTab($event: TabsOnChangeEvent) {
+  onSelectLevelTwoTab(event: TabsOnChangeEvent) {
+    this.actTabIndexMap.set(this.actRootIndex, event.index);
+    console.log(this.getCurTabIndex());
+  }
 
+  getCurTabIndex() {
+    console.log(this.actTabIndexMap);
+    const val = this.actTabIndexMap.get(this.actRootIndex);
+    return val ? val:0
   }
 }
 
