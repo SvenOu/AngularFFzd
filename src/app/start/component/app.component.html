@@ -1,7 +1,7 @@
 <div class="flex-container">
   <Flex [direction]="'row'" [align]="'center'">
     <div class="inline">
-      <a Button [icon]="headBackImg" routerLink="product/ffChild/3">
+      <a Button [icon]="headBackImg" (click)="goBack($event)">
         {{ 'back' | translate }}
       </a>
       <ng-template #headBackImg>
@@ -13,7 +13,7 @@
       <SearchBar [placeholder]="trans['searchPlaceholder']"></SearchBar>
     </div>
     <div class="inline">
-      <img src="assets/style/icon/profile_icon.png" alt=""/>
+      <img src="assets/style/icon/profile_icon.png" alt=""  [routerLink]="profileUrl"/>
     </div>
   </Flex>
 </div>
