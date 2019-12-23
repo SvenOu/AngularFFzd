@@ -5,4 +5,8 @@ export class AppConstant {
     public static operationUrlPrefix:string = "product/operation";
     public static profileUrlPrefix:string = "product/operation";
 
+    public static typeFfChild:string = "ffChild";
+    public static typeChildRearing:string = "childRearing";
+    public static typeVIPOrder:string = "VIPOrder";
+
 }

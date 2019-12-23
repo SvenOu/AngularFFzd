@@ -38,9 +38,9 @@ export class MainComponent implements OnInit{
   {
     // 初始化
     this.actRootIndex = 0;
-    this.typesMap.set(0,'ffChild');
-    this.typesMap.set(1,'childRearing');
-    this.typesMap.set(2,'VIPOrder');
+    this.typesMap.set(0, AppConstant.typeFfChild);
+    this.typesMap.set(1, AppConstant.typeChildRearing);
+    this.typesMap.set(2, AppConstant.typeVIPOrder);
     this.curTypeId = this.typesMap.get(this.actRootIndex);
 
     this.activateRouter.params.subscribe(params => {
