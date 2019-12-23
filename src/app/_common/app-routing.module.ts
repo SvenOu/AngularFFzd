@@ -10,11 +10,9 @@ const routes: Routes = [
   { path: AppConstant.profileUrlPrefix, component: MyCenterComponent}
 ];
 
-const appRouting = RouterModule.forRoot(routes);
-
 @NgModule({
   imports: [
-    appRouting
+    RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
 })
