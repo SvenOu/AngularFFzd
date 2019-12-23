@@ -3,6 +3,7 @@ import {Translator} from 'angular-translator';
 import {ActivatedRoute, Router} from '@angular/router';
 import {TabVo} from '../../../_common/bean/TabVo';
 import {AppConstant} from '../../../_common/bean/AppConstant';
+import {TransitionService} from '../../../_common/service/transition.service';
 
 @Component({
   selector: 'app-main',
@@ -32,7 +33,7 @@ export class MainComponent implements OnInit{
 
   constructor(
     private translator: Translator,
-    private router: Router,
+    private ts: TransitionService,
     private activateRouter: ActivatedRoute)
   {
     // 初始化
@@ -137,13 +138,12 @@ export class MainComponent implements OnInit{
          tabIndex = 0;
       }
       const url:any = AppConstant.operationUrlPrefix  +"/"+ typeId +"/" + tabIndex;
-      this.router.navigate([url]);
+      this.ts.navigate([url]);
     }
   }
 
   onSelectLevelTwoTab(event) {
     this.actTabIndexMap.set(this.actRootIndex, event.index);
   }
-
 }
 

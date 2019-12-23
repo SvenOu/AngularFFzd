@@ -13,7 +13,7 @@
       <SearchBar [placeholder]="trans['searchPlaceholder']"></SearchBar>
     </div>
     <div class="inline">
-      <img src="assets/style/icon/profile_icon.png" alt=""  [routerLink]="profileUrl"/>
+      <img src="assets/style/icon/profile_icon.png" alt=""  (click)="goPage($event, profileUrl)"/>
     </div>
   </Flex>
 </div>

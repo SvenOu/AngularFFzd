@@ -2,6 +2,7 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {Translator} from 'angular-translator';
 import {AppConstant} from '../../_common/bean/AppConstant';
 import {Location} from '@angular/common';
+import {TransitionService} from '../../_common/service/transition.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   private trans: object = {};
   private profileUrl: string = AppConstant.profileUrlPrefix;
 
-  constructor(private translator: Translator, private location: Location) {}
+  constructor(private translator: Translator, private ts: TransitionService) {}
   ngAfterViewInit(): void {
     // 去掉加载信息
     const loadingEl = document.getElementById('initLoading');
@@ -33,7 +34,13 @@ export class AppComponent implements OnInit, AfterViewInit {
       }
     });
   }
+
   goBack(event) {
-    this.location.back();
+    this.ts.goBack(event);
   }
+
+  goPage(event, url: string) {
+    this.ts.navigate([url]);
+  }
+
 }
