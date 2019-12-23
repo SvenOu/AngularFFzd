@@ -136,7 +136,7 @@ export class MainComponent implements OnInit{
       if(typeof(tabIndex) == 'undefined'){
          tabIndex = 0;
       }
-      const url:any = "/product/"+ typeId +"/" + tabIndex;
+      const url:any = "product/operation/"+ typeId +"/" + tabIndex;
       this.router.navigate([url]);
     }
   }
