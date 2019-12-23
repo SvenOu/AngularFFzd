@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Translator} from 'angular-translator';
-import {TabsOnChangeEvent} from 'ng-zorro-antd-mobile/tabs/PropsType';
 import {ActivatedRoute, Router} from '@angular/router';
 import {TabVo} from '../../../_common/bean/TabVo';
+import {AppConstant} from '../../../_common/bean/AppConstant';
 
 @Component({
   selector: 'app-main',
@@ -136,7 +136,7 @@ export class MainComponent implements OnInit{
       if(typeof(tabIndex) == 'undefined'){
          tabIndex = 0;
       }
-      const url:any = "product/operation/"+ typeId +"/" + tabIndex;
+      const url:any = AppConstant.operationUrlPrefix  +"/"+ typeId +"/" + tabIndex;
       this.router.navigate([url]);
     }
   }
