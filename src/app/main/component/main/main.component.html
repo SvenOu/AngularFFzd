@@ -12,6 +12,7 @@
             [page]="3"
             [activeTab]="0"
             [prerenderingSiblingsNumber]="0"
+            [swipeable] = "true"
             (onChange)="onSelectLevelTwoTab($event)">
 
             <TabPane
@@ -29,8 +30,8 @@
             [page]="3"
             [activeTab]="0"
             [prerenderingSiblingsNumber]="0"
+            [swipeable] = "true"
             (onChange)="onSelectLevelTwoTab($event)">
-
             <TabPane
               *ngFor="let tItem of tabRootConfig['tabVoChild2']; let i = index" [title]="tItem['tabName']">
               <div

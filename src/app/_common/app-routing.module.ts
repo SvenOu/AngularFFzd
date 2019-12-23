@@ -3,11 +3,11 @@ import {RouterModule, Routes} from '@angular/router';
 import {MainComponent} from '../main/component/main/main.component';
 
 const routes: Routes = [
-  { path: '', component: MainComponent },
-  { path: 'product/:typeId/:tabIndex', component: MainComponent }
+  { path: '', redirectTo: 'product/ffChild/0', pathMatch: 'full' },
+  { path: 'product/:typeId/:tabIndex', component: MainComponent}
 ];
 
-export const appRouting = RouterModule.forRoot(routes);
+const appRouting = RouterModule.forRoot(routes);
 
 @NgModule({
   imports: [

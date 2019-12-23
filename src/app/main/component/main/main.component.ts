@@ -11,46 +11,56 @@ import {TabVo} from '../../../_common/bean/TabVo';
 })
 export class MainComponent implements OnInit{
   /**
-   * 第一层tab配置
-   */
-  private types = {
-    type0: 'ffChild',
-    type1: 'childRearing'
-  };
-
-  /**
    * 第一层tab选中索引
    */
-  private actRootIndex = 0;
+  private actRootIndex;
+
+  /**
+   * 第一层tab配置
+   */
+  private typesMap = new Map();
 
   /**
    * 第二层tab选中索引
    */
   private actTabIndexMap = new Map();
 
-  private tabRootConfig:object = {};
-  private trans: object = {};
+  private tabRootConfig:any = {};
+  private trans:any = {};
   private tabConfigs: TabVo[];
-  private curTypeId: string = this.types.type1;
+  private curTypeId: string;
+
   constructor(
     private translator: Translator,
     private router: Router,
-    private activateRouter: ActivatedRoute
-  ) {}
-
-  ngOnInit(): void {
+    private activateRouter: ActivatedRoute)
+  {
+    // 初始化
+    this.actRootIndex = 0;
+    this.typesMap.set(0,'ffChild');
+    this.typesMap.set(1,'childRearing');
+    this.typesMap.set(2,'VIPOrder');
+    this.curTypeId = this.typesMap.get(this.actRootIndex);
 
     this.activateRouter.params.subscribe(params => {
-      console.log(params);
       const typeId:string = params['typeId'];
       const tabIndex:string = params['tabIndex'];
       if(typeId){
         this.curTypeId = typeId;
-        if(tabIndex && typeof tabIndex != 'string'){
+        for (let [key, value] of this.typesMap.entries()) {
+          if(value == this.curTypeId){
+              this.actRootIndex = key;
+              break;
+          }
+        }
+        if(tabIndex){
           this.actTabIndexMap.set(this.actRootIndex, tabIndex);
         }
       }
     });
+  }
+
+  ngOnInit(): void {
     const keys:string[] =[
       'searchPlaceholder',
       'ffChild',
@@ -87,7 +97,7 @@ export class MainComponent implements OnInit{
           new TabVo(this.trans['musicCastle'], 5, null),
           new TabVo(this.trans['animeStory'], 6, null)
         ] ;
-        const tabVo1 = new TabVo(this.trans[this.types.type0], 'ffChild', childs1);
+        const tabVo1 = new TabVo(this.trans[this.typesMap.get(0)], this.typesMap.get(0), childs1);
 
         const childs2: TabVo[] = [
           new TabVo(this.trans['recommend'], 0, null),
@@ -98,7 +108,7 @@ export class MainComponent implements OnInit{
           new TabVo(this.trans['workMakeMoney'], 5, null),
           new TabVo(this.trans['lifeGrowingUp'], 6, null)
         ] ;
-        const tabVo2 = new TabVo(this.trans[this.types.type1], 'childRearing', childs2);
+        const tabVo2 = new TabVo(this.trans[this.typesMap.get(1)], this.typesMap.get(1), childs2);
 
         this.tabConfigs = [];
 
@@ -110,28 +120,30 @@ export class MainComponent implements OnInit{
 
         this.tabRootConfig['tabName3'] = this.trans['VIPOrder'];
 
+        const tabVo3 = new TabVo(this.trans[this.typesMap.get(2)], this.typesMap.get(2), childs2);
+
         this.tabConfigs.push(tabVo1);
         this.tabConfigs.push(tabVo2);
+        this.tabConfigs.push(tabVo3);
       }
     });
   }
 
   onSelectLevelOneTab(event) {
     if(event && event.selectedIndex >=0){
-      this.actRootIndex = event.selectedIndex;
+      const typeId:string = this.typesMap.get(event.selectedIndex);
+      let tabIndex:number = this.actTabIndexMap.get(event.selectedIndex);
+      if(typeof(tabIndex) == 'undefined'){
+         tabIndex = 0;
+      }
+      const url:any = "/product/"+ typeId +"/" + tabIndex;
+      this.router.navigate([url]);
     }
-    console.log(event);
   }
 
-  onSelectLevelTwoTab(event: TabsOnChangeEvent) {
+  onSelectLevelTwoTab(event) {
     this.actTabIndexMap.set(this.actRootIndex, event.index);
-    console.log(this.getCurTabIndex());
   }
 
-  getCurTabIndex() {
-    console.log(this.actTabIndexMap);
-    const val = this.actTabIndexMap.get(this.actRootIndex);
-    return val ? val:0
-  }
 }
 
