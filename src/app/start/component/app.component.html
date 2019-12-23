@@ -1,8 +1,21 @@
-<h1>测试标题</h1>
-<nav>
-  <a [routerLink]="['/product/', 'ffChild','4']">
-    链接测试
-  </a>
-</nav>
+<div class="flex-container">
+  <Flex [direction]="'row'" [align]="'center'">
+    <div class="inline">
+      <div Button [icon]="headBackImg">
+        {{ 'back' | translate }}
+      </div>
+      <ng-template #headBackImg>
+        <img src="assets/style/icon/back.png" alt=""/>
+      </ng-template>
+    </div>
+
+    <div class="inline header-search-container">
+      <SearchBar [placeholder]="trans['searchPlaceholder']"></SearchBar>
+    </div>
+    <div class="inline">
+      <img src="assets/style/icon/profile_icon.png" alt=""/>
+    </div>
+  </Flex>
+</div>
 <router-outlet></router-outlet>
 
