@@ -1,7 +1,6 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {Translator} from 'angular-translator';
 import {AppConstant} from '../../_common/bean/AppConstant';
-import {Location} from '@angular/common';
 import {TransitionService} from '../../_common/service/transition.service';
 
 @Component({
