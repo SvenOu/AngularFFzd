@@ -1,29 +1,34 @@
 <Flex [direction]="'column'">
   <Flex [direction]="'row'">
-    <div class="inline">Block</div>
-    <div class="inline">Block</div>
-    <div class="inline">Block</div>
-  </Flex>
-  <div class="inline">Block</div>
-  <Flex [direction]="'row'">
-    <div class="inline">Block</div>
-    <div class="inline">Block</div>
-    <div class="inline">Block</div>
-  </Flex>
-  <Flex [direction]="'row'">
-    <div class="inline">Block</div>
-    <div class="inline">Block</div>
-    <div class="inline">Block</div>
+    <img src="assets/style/icon/profileAnonymous.png" alt="" class="inline"/>
+    <div class="inline">{{ 'anonymousProject' | translate }}</div>
+    <Flex [direction]="'column'">
+      <img src="assets/style/icon/myCourse.png" alt=""/>
+      <div>
+        {{ 'myCourses' | translate }}
+      </div>
+    </Flex>
   </Flex>
   <Flex [direction]="'row'">
-    <div class="inline">Block</div>
-    <div class="inline">Block</div>
-    <div class="inline">Block</div>
+    <img src="assets/style/icon/vip_icon2.png" alt="" class="inline"/>
+    <div class="inline">{{ 'mSeeWant' | translate }}</div>
+    <div >{{ 'toOpen' | translate }}</div>
+    <img src="assets/style/icon/right_direction.png" alt="" class="inline"/>
   </Flex>
   <Flex [direction]="'row'">
-    <div class="inline">Block</div>
-    <div class="inline">Block</div>
-    <div class="inline">Block</div>
+    <img src="assets/style/icon/icon_customer_service.png" alt="" class="inline"/>
+    <div class="inline">{{ 'customerService' | translate }}</div>
+    <img src="assets/style/icon/right_direction2.png" alt="" class="inline"/>
   </Flex>
-  <div class="inline">Block</div>
+  <Flex [direction]="'row'">
+    <img src="assets/style/icon/icon_help.png" alt="" class="inline"/>
+    <div class="inline">{{ 'help' | translate }}</div>
+    <img src="assets/style/icon/right_direction2.png" alt="" class="inline"/>
+  </Flex>
+  <Flex [direction]="'row'">
+    <img src="assets/style/icon/icon_download.png" alt="" class="inline"/>
+    <div class="inline">{{ 'downloadList' | translate }}</div>
+    <img src="assets/style/icon/right_direction2.png" alt="" class="inline"/>
+  </Flex>
+  <img src="assets/style/icon/bottom_ad.jpg" alt=""/>
 </Flex>
