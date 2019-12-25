@@ -1,5 +1,9 @@
 <div class="flex-container">
-  <Flex [direction]="'row'" [align]="'center'">
+
+  <Flex [direction]="'row'" [align]="'center'" [hidden]="
+  !(curPageName == pageConstant.pageMain
+  || curPageName == pageConstant.pageStart
+  || curPageName == pageConstant.pageVipOrder)">
     <div class="inline">
       <a Button [icon]="headBackImg" (click)="goBack($event)">
         {{ 'back' | translate }}
@@ -16,6 +20,20 @@
       <img src="assets/style/icon/profile_icon.png" alt="" (click)="goPage($event, profileUrl)"/>
     </div>
   </Flex>
+
+  <Flex [direction]="'row'" [align]="'center'" [hidden]="
+  !(curPageName == pageConstant.pageProfile)">
+    <div class="inline">
+      <a Button [icon]="headBackImg" (click)="goBack($event)">
+        {{ 'back' | translate }}
+      </a>
+      <ng-template #headBackImg>
+        <img src="assets/style/icon/back.png" alt=""/>
+      </ng-template>
+    </div>
+    <div class="inline" ng-if="curPageName != pageConstant.pageProfile">{{ 'personalCenter' | translate }}</div>
+  </Flex>
+
 </div>
 <router-outlet></router-outlet>
 

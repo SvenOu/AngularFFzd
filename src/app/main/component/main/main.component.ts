@@ -62,6 +62,7 @@ export class MainComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.ts.onOpenPage(AppConstant.pageMain);
     const keys:string[] =[
       'searchPlaceholder',
       'ffChild',

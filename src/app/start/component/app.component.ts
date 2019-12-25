@@ -1,18 +1,25 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
 import {Translator} from 'angular-translator';
 import {AppConstant} from '../../_common/bean/AppConstant';
 import {TransitionService} from '../../_common/service/transition.service';
+import {TransitionCallback} from '../../_common/interface/CommonInterfaces';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.styl']
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit,OnDestroy, AfterViewInit, TransitionCallback {
+
   private trans: object = {};
   private profileUrl: string = AppConstant.profileUrlPrefix;
+  private pageConstant = AppConstant;
+  private curPageName:string;
 
-  constructor(private translator: Translator, private ts: TransitionService) {}
+  constructor(private translator: Translator, private ts: TransitionService) {
+    ts.registerTransitionCallback(this);
+  }
+
   ngAfterViewInit(): void {
     // 去掉加载信息
     const loadingEl = document.getElementById('initLoading');
@@ -21,7 +28,16 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
   }
 
+  onOpenPage(pageName: string, param?: any): void {
+    this.curPageName = pageName;
+  }
+
+  ngOnDestroy(): void {
+    this.ts.unRegisterTransitionCallback(this);
+  }
+
   ngOnInit(): void {
+    this.ts.onOpenPage(AppConstant.pageStart);
     const keys:string[] =[
       'searchPlaceholder'
     ];
@@ -41,5 +57,4 @@ export class AppComponent implements OnInit, AfterViewInit {
   goPage(event, url: string) {
     this.ts.navigate([url]);
   }
-
 }
