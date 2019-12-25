@@ -10,6 +10,10 @@ export class AppConstant {
    */
   private static _profileMainUrl: string = 'pMain';
   private static _profileMyCourseUrl: string = 'pMyCourse';
+  private static _profileMyCollectUrl: string = 'pMyCollect';
+  private static _profileMyCustomerServiceUrl: string = 'pMyCustomerService';
+  private static _profileMyDownloadListUrl: string = 'pMyDownloadList';
+  private static _profileMyHelpUrl: string = 'pMyHelp';
 
   public static typeFfChild: string = 'ffChild';
   public static typeChildRearing: string = 'childRearing';
@@ -23,6 +27,10 @@ export class AppConstant {
   public static pageProfile: string = 'page_profile';
   public static pageProfileMyCourse: string = 'page_profile_my_course';
   public static pageVipOrder: string = 'page_vip_order';
+  public static pageMyCollect: string = 'page_my_collect';
+  public static pageMyCustomerService: string = 'page_my_costomer_service';
+  public static pageMyDownloadList: string = 'page_my_download_list';
+  public static pageMyHelp: string = 'page_my_help';
 
   static get profileMainUrl(): string {
     return this.profileUrlPrefix + this._profileMainUrl;
@@ -30,5 +38,21 @@ export class AppConstant {
 
   static get profileMyCourseUrl(): string {
     return this.profileUrlPrefix + this._profileMyCourseUrl;
+  }
+
+  static get profileMyCollectUrl(): string {
+    return this.profileUrlPrefix + this._profileMyCollectUrl;
+  }
+
+  static get profileMyCustomerServiceUrl(): string {
+    return this.profileUrlPrefix + this._profileMyCustomerServiceUrl;
+  }
+
+  static get profileMyDownloadListUrl(): string {
+    return this.profileUrlPrefix + this._profileMyDownloadListUrl;
+  }
+
+  static get profileMyHelpUrl(): string {
+    return this.profileUrlPrefix + this._profileMyHelpUrl;
   }
 }
