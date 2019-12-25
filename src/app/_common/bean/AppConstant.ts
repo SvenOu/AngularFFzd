@@ -24,13 +24,18 @@ export class AppConstant {
    */
   public static pageMain: string = 'page_main';
   public static pageStart: string = 'page_start';
+
+  public static pageVipOrder: string = 'page_vip_order';
+
+  // profiles
   public static pageProfile: string = 'page_profile';
   public static pageProfileMyCourse: string = 'page_profile_my_course';
-  public static pageVipOrder: string = 'page_vip_order';
   public static pageMyCollect: string = 'page_my_collect';
   public static pageMyCustomerService: string = 'page_my_costomer_service';
-  public static pageMyDownloadList: string = 'page_my_download_list';
   public static pageMyHelp: string = 'page_my_help';
+  public static pageMyDownloadList: string = 'page_my_download_list';
+
+  //
 
   static get profileMainUrl(): string {
     return this.profileUrlPrefix + this._profileMainUrl;

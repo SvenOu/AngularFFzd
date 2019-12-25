@@ -9,8 +9,6 @@ import {TransitionService} from '../../../_common/service/transition.service';
   styleUrls: ['./my-center.component.styl']
 })
 export class MyCenterComponent implements OnInit {
-  private profileMyCourseUrl: string = AppConstant.profileMyCourseUrl;
-
   constructor(private router: ActivatedRoute, private ts:TransitionService) { }
 
   ngOnInit() {
@@ -18,22 +16,22 @@ export class MyCenterComponent implements OnInit {
   }
 
   goMyCourse(event) {
-    this.ts.navigate([this.profileMyCourseUrl]);
+    this.ts.navigate([AppConstant.profileMyCourseUrl]);
   }
 
   goCollect(event) {
-
+    this.ts.navigate([AppConstant.profileMyCollectUrl]);
   }
 
   goCustomerService(event) {
-
+    this.ts.navigate([AppConstant.profileMyCustomerServiceUrl]);
   }
 
   goHelp(event) {
-
+    this.ts.navigate([AppConstant.profileMyHelpUrl]);
   }
 
   goDownloadList(event) {
-
+    this.ts.navigate([AppConstant.profileMyDownloadListUrl]);
   }
 }

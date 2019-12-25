@@ -23,7 +23,12 @@
 
   <Flex [direction]="'row'" [align]="'center'" [hidden]="
   !(curPageName == pageConstant.pageProfile
-  || curPageName == pageConstant.pageProfileMyCourse)">
+  || curPageName == pageConstant.pageProfileMyCourse
+  || curPageName == pageConstant.pageMyCollect
+  || curPageName == pageConstant.pageMyCustomerService
+  || curPageName == pageConstant.pageMyHelp
+  || curPageName == pageConstant.pageMyDownloadList
+  )">
     <div class="inline">
       <a Button [icon]="headBackImg" (click)="goBack($event)">
         {{ 'back' | translate }}
@@ -32,8 +37,12 @@
         <img src="assets/style/icon/back.png" alt=""/>
       </ng-template>
     </div>
-    <div class="inline" ng-if="curPageName != pageConstant.pageProfile">{{ 'personalCenter' | translate }}</div>
-    <div class="inline" ng-if="curPageName != pageConstant.pageProfileMyCourse">{{ 'myCourses' | translate }}</div>
+    <div class="inline" [hidden]="curPageName != pageConstant.pageProfile">{{ 'personalCenter' | translate }}</div>
+    <div class="inline" [hidden]="curPageName != pageConstant.pageProfileMyCourse">{{ 'myCourses' | translate }}</div>
+    <div class="inline" [hidden]="curPageName != pageConstant.pageMyCollect">{{ 'myCollect' | translate }}</div>
+    <div class="inline" [hidden]="curPageName != pageConstant.pageMyCustomerService">{{ 'ffzdCustomerService' | translate }}</div>
+    <div class="inline" [hidden]="curPageName != pageConstant.pageMyHelp">{{ 'help' | translate }}</div>
+    <div class="inline" [hidden]="curPageName != pageConstant.pageMyDownloadList">{{ 'downloadList' | translate }}</div>
   </Flex>
 
 </div>
