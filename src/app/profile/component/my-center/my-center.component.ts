@@ -20,4 +20,20 @@ export class MyCenterComponent implements OnInit {
   goMyCourse(event) {
     this.ts.navigate([this.profileMyCourseUrl]);
   }
+
+  goCollect(event) {
+
+  }
+
+  goCustomerService(event) {
+
+  }
+
+  goHelp(event) {
+
+  }
+
+  goDownloadList(event) {
+
+  }
 }

@@ -15,17 +15,22 @@
     <div >{{ 'toOpen' | translate }}</div>
     <img src="assets/style/icon/right_direction.png" alt="" class="inline"/>
   </Flex>
-  <Flex [direction]="'row'">
+  <Flex [direction]="'row'" (click)="goCollect($event)">
+    <img src="assets/style/icon/icon_collect.png" alt="" class="inline"/>
+    <div class="inline">{{ 'collect' | translate }}</div>
+    <img src="assets/style/icon/right_direction2.png" alt="" class="inline"/>
+  </Flex>
+  <Flex [direction]="'row'" (click)="goCustomerService($event)">
     <img src="assets/style/icon/icon_customer_service.png" alt="" class="inline"/>
     <div class="inline">{{ 'customerService' | translate }}</div>
     <img src="assets/style/icon/right_direction2.png" alt="" class="inline"/>
   </Flex>
-  <Flex [direction]="'row'">
+  <Flex [direction]="'row'" (click)="goHelp($event)">
     <img src="assets/style/icon/icon_help.png" alt="" class="inline"/>
     <div class="inline">{{ 'help' | translate }}</div>
     <img src="assets/style/icon/right_direction2.png" alt="" class="inline"/>
   </Flex>
-  <Flex [direction]="'row'">
+  <Flex [direction]="'row'" (click)="goDownloadList($event)">
     <img src="assets/style/icon/icon_download.png" alt="" class="inline"/>
     <div class="inline">{{ 'downloadList' | translate }}</div>
     <img src="assets/style/icon/right_direction2.png" alt="" class="inline"/>
