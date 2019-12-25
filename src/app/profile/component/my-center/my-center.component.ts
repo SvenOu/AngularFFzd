@@ -9,7 +9,7 @@ import {TransitionService} from '../../../_common/service/transition.service';
   styleUrls: ['./my-center.component.styl']
 })
 export class MyCenterComponent implements OnInit {
-  private profileMyCourseUrl: string = AppConstant.profileUrlPrefix + AppConstant.profileMyCourse;
+  private profileMyCourseUrl: string = AppConstant.profileMyCourseUrl;
 
   constructor(private router: ActivatedRoute, private ts:TransitionService) { }
 

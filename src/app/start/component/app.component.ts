@@ -12,7 +12,7 @@ import {TransitionCallback} from '../../_common/interface/CommonInterfaces';
 export class AppComponent implements OnInit,OnDestroy, AfterViewInit, TransitionCallback {
 
   private trans: object = {};
-  private profileUrl: string = AppConstant.profileUrlPrefix + AppConstant.profileMain;
+  private profileUrl: string = AppConstant.profileMainUrl;
   private pageConstant = AppConstant;
   private curPageName:string;
 

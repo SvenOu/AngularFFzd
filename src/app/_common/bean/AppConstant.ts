@@ -8,8 +8,8 @@ export class AppConstant {
   /*
    * url 配置
    */
-  public static profileMain: string = 'pMain';
-  public static profileMyCourse: string = 'pMyCourse';
+  private static _profileMainUrl: string = 'pMain';
+  private static _profileMyCourseUrl: string = 'pMyCourse';
 
   public static typeFfChild: string = 'ffChild';
   public static typeChildRearing: string = 'childRearing';
@@ -24,4 +24,11 @@ export class AppConstant {
   public static pageProfileMyCourse: string = 'page_profile_my_course';
   public static pageVipOrder: string = 'page_vip_order';
 
+  static get profileMainUrl(): string {
+    return this.profileUrlPrefix + this._profileMainUrl;
+  }
+
+  static get profileMyCourseUrl(): string {
+    return this.profileUrlPrefix + this._profileMyCourseUrl;
+  }
 }

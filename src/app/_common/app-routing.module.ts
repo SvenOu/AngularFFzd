@@ -9,8 +9,8 @@ import {MyCourseComponent} from '../profile/component/my-course/my-course.compon
 const routes: Routes = [
   { path: '', redirectTo: AppConstant.operationUrlPrefix + 'ffChild/0', pathMatch: 'full' , canActivate: [AppAuthGuard]},
   { path: AppConstant.operationUrlPrefix + ':typeId/:tabIndex', component: MainComponent, canActivate: [AppAuthGuard]},
-  { path: AppConstant.profileUrlPrefix + AppConstant.profileMain, component: MyCenterComponent, canActivate: [AppAuthGuard]},
-  { path: AppConstant.profileUrlPrefix + AppConstant.profileMyCourse, component: MyCourseComponent, canActivate: [AppAuthGuard]}
+  { path: AppConstant.profileMainUrl, component: MyCenterComponent, canActivate: [AppAuthGuard]},
+  { path: AppConstant.profileMyCourseUrl, component: MyCourseComponent, canActivate: [AppAuthGuard]}
 ];
 
 @NgModule({
