@@ -12,7 +12,7 @@ import {TransitionCallback} from '../../_common/interface/CommonInterfaces';
 export class AppComponent implements OnInit,OnDestroy, AfterViewInit, TransitionCallback {
 
   private trans: object = {};
-  private profileUrl: string = AppConstant.profileUrlPrefix;
+  private profileUrl: string = AppConstant.profileUrlPrefix + AppConstant.profileMain;
   private pageConstant = AppConstant;
   private curPageName:string;
 
@@ -54,7 +54,7 @@ export class AppComponent implements OnInit,OnDestroy, AfterViewInit, Transition
     this.ts.goBack(event);
   }
 
-  goPage(event, url: string) {
-    this.ts.navigate([url]);
+  goProfile(event) {
+    this.ts.navigate([this.profileUrl]);
   }
 }

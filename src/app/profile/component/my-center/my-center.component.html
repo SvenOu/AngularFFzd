@@ -1,9 +1,9 @@
 <Flex [direction]="'column'">
   <Flex [direction]="'row'">
-    <img src="assets/style/icon/profileAnonymous.png" alt="" class="inline"/>
+    <img src="assets/style/icon/profile_anonymous.png" alt="" class="inline"/>
     <div class="inline">{{ 'anonymousProject' | translate }}</div>
-    <Flex [direction]="'column'">
-      <img src="assets/style/icon/myCourse.png" alt=""/>
+    <Flex [direction]="'column'" (click)="goMyCourse($event)">
+      <img src="assets/style/icon/my_course.png" alt=""/>
       <div>
         {{ 'myCourses' | translate }}
       </div>

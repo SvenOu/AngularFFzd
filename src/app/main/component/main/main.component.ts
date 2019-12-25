@@ -138,7 +138,7 @@ export class MainComponent implements OnInit{
       if(typeof(tabIndex) == 'undefined'){
          tabIndex = 0;
       }
-      const url:any = AppConstant.operationUrlPrefix  +"/"+ typeId +"/" + tabIndex;
+      const url:any = AppConstant.operationUrlPrefix  + typeId +"/" + tabIndex;
       this.ts.navigate([url]);
     }
   }

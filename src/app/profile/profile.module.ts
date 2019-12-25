@@ -3,10 +3,11 @@ import {CommonModule} from '@angular/common';
 import { MyCenterComponent } from './component/my-center/my-center.component';
 import {NgZorroAntdMobileModule} from 'ng-zorro-antd-mobile';
 import {TranslatorModule} from 'angular-translator';
+import { MyCourseComponent } from './component/my-course/my-course.component';
 
 
 @NgModule({
-  declarations: [MyCenterComponent],
+  declarations: [MyCenterComponent, MyCourseComponent],
   imports: [
     /** 导入 ng-zorro-antd-mobile 模块 **/
     NgZorroAntdMobileModule,

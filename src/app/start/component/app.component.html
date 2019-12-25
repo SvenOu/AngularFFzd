@@ -17,12 +17,13 @@
       <SearchBar [placeholder]="trans['searchPlaceholder']"></SearchBar>
     </div>
     <div class="inline">
-      <img src="assets/style/icon/profile_icon.png" alt="" (click)="goPage($event, profileUrl)"/>
+      <img src="assets/style/icon/profile_icon.png" alt="" (click)="goProfile($event)"/>
     </div>
   </Flex>
 
   <Flex [direction]="'row'" [align]="'center'" [hidden]="
-  !(curPageName == pageConstant.pageProfile)">
+  !(curPageName == pageConstant.pageProfile
+  || curPageName == pageConstant.pageProfileMyCourse)">
     <div class="inline">
       <a Button [icon]="headBackImg" (click)="goBack($event)">
         {{ 'back' | translate }}
@@ -32,6 +33,7 @@
       </ng-template>
     </div>
     <div class="inline" ng-if="curPageName != pageConstant.pageProfile">{{ 'personalCenter' | translate }}</div>
+    <div class="inline" ng-if="curPageName != pageConstant.pageProfileMyCourse">{{ 'myCourses' | translate }}</div>
   </Flex>
 
 </div>

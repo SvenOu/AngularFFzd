@@ -9,17 +9,15 @@ import {TransitionService} from '../../../_common/service/transition.service';
   styleUrls: ['./my-center.component.styl']
 })
 export class MyCenterComponent implements OnInit {
+  private profileMyCourseUrl: string = AppConstant.profileUrlPrefix + AppConstant.profileMyCourse;
 
   constructor(private router: ActivatedRoute, private ts:TransitionService) { }
 
   ngOnInit() {
     this.ts.onOpenPage(AppConstant.pageProfile);
-    // this.router.params.subscribe(params => {
-    //   // this.product = products[+params.get('productId')];
-    //   console.log(this.router);
-    //   console.log(params.get('typeId'));
-    //   console.log(params.get('tabIndex'));
-    //
-    // });
+  }
+
+  goMyCourse(event) {
+    this.ts.navigate([this.profileMyCourseUrl]);
   }
 }
