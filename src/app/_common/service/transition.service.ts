@@ -22,19 +22,19 @@ export class TransitionService {
   }
 
   public registerTransitionCallback(callback: TransitionCallback) {
-    if (!this.tsCallbacks.includes(callback)) {
+    if (!AppUtils.arrayContains(this.tsCallbacks, callback)) {
       this.tsCallbacks.push(callback);
     }
   }
 
   public unRegisterTransitionCallback(callback: TransitionCallback) {
-    if (this.tsCallbacks.includes(callback)) {
+    if (!AppUtils.arrayContains(this.tsCallbacks, callback)) {
       AppUtils.removeElement(this.tsCallbacks, callback);
     }
   }
 
   public clearTransitionCallback(callback: TransitionCallback) {
-    if (this.tsCallbacks.includes(callback)) {
+    if (!AppUtils.arrayContains(this.tsCallbacks, callback)) {
       this.tsCallbacks = [];
     }
   }
