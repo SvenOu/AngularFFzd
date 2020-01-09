@@ -40,5 +40,17 @@ import {AppRoutingModule} from '../_common/app-routing.module';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {}
+  private vConsole:any
+  constructor() {
+    this.initConsole();
+  }
+  private initConsole() {
+    // noinspection TypeScriptUnresolvedVariable
+    if(typeof(VConsole) != "undefined"){
+      // noinspection TypeScriptUnresolvedFunction
+      this.vConsole = new VConsole();
+      // noinspection TypeScriptUnresolvedVariable
+      window.vConsole = this.vConsole;
+    }
+  }
 }

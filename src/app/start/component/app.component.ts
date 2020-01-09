@@ -3,7 +3,6 @@ import {Translator} from 'angular-translator';
 import {AppConstant} from '../../_common/bean/AppConstant';
 import {TransitionService} from '../../_common/service/transition.service';
 import {TransitionCallback} from '../../_common/interface/CommonInterfaces';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
