@@ -45,6 +45,7 @@ export class AppModule {
     this.initConsole();
   }
   private initConsole() {
+    // todo 需要做远程控制
     // noinspection TypeScriptUnresolvedVariable
     if(typeof(VConsole) != "undefined"){
       // noinspection TypeScriptUnresolvedFunction
