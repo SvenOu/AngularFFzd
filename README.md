@@ -1,6 +1,6 @@
 # Ffzd angular2 + ant design
 
-基于angular2 + ant design 基本框架和示例项目
+基于angular2 + ant design 的基本框架与示例项目
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
