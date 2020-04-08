@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class NetworkService {
-  private static baseUrl = 'http://app.yuedaotech.cn:25603/API_ROP';
+  private static baseUrl = 'http://xx.xx.xxx/API_ROP';
   private static operatingPageUrl = '/page/get';
   private static imageUrl = '/HD/';
   constructor() { }
